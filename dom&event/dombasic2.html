@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM_Learning</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class = "language" > 
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langname) {
+        const li = document.createElement("li");
+        li.textContent = `${langname}`;
+        document.querySelector(".language").appendChild(li);
+    }
+
+    addLanguage("Java");
+    addLanguage("Python");
+    addLanguage("C++");
+
+    function addLanguage(langname) {
+        const li = document.createElement("li");
+        li.appendChild(document.createTextNode(langname));
+        document.querySelector(".language").appendChild(li);
+    }
+    addLanguage("HTML");
+    addLanguage("css");
+
+    // Edit
+
+    const secondlang = document.querySelector("li:nth-child(2)");
+    console.log(secondlang);
+    // secondlang.innerHTML = "C#";
+    const newli = document.createElement("li");
+    newli.textContent = "mojo";
+    secondlang.replaceWith(newli);
+
+    // Remove
+
+    const lastlang = document.querySelector("li:last-child");
+    lastlang.remove();
+
+
+</script>
+
+</html>
